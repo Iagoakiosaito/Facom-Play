@@ -8,8 +8,8 @@
         android:title="@string/home" />
     <item
         android:id="@+id/nav_music"
-        android:icon="@drawable/ic_baseline_music_note_24"
-        android:title="@string/musicas" />
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/perfil" />
     <item
         android:id="@+id/nav_config"
         android:icon="@drawable/ic_baseline_settings_24"

@@ -18,9 +18,9 @@
     </fragment>
     <fragment
         android:id="@+id/musicFragment"
-        android:name="com.example.facomplay.fragments.MusicFragment"
+        android:name="com.example.facomplay.fragments.ProfileFragment"
         android:label="fragment_music"
-        tools:layout="@layout/fragment_music" >
+        tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_musicFragment_to_configFragment2"
             app:destination="@id/configFragment2" />

@@ -3,15 +3,13 @@ package com.example.facomplay;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.facomplay.fragments.ConfigFragment;
 import com.example.facomplay.fragments.Home.HomeFragment;
-import com.example.facomplay.fragments.MusicFragment;
+import com.example.facomplay.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_container, new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.FL_fragment, new HomeFragment()).commit();
 
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -42,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new ConfigFragment();
                         break;
                     case R.id.nav_music:
-                        fragment = new MusicFragment();
+                        fragment = new ProfileFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.FL_fragment, fragment).commit();
                 return true;
             }
         });

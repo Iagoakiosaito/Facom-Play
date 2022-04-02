@@ -53,7 +53,6 @@ public class MusicaRecyclerAdapter extends RecyclerView.Adapter<MusicaRecyclerAd
 
         holder.itemView.setOnClickListener(view ->{
             mItemListener.onItemClick(musicaArrayList.get(position));
-
         });
 
         holder.nomeMusicaText.setText(nomeMusica);
