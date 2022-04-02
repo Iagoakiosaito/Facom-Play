@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Facom Play</string>
+    <string name="home">Home</string>
+    <string name="musicas">Músicas</string>
+    <string name="configuraces">Configurações</string>
+    
+    <string-array name="nome_cantores">
+        <item>Racionais MC's</item>
+        <item>Marcelo D2</item>
+        <item>Sabotage</item>
+        <item>Dexter</item>
+        <item>Rincon Sapiência</item>
+        <item>Black Alien</item>
+        <item>TropKillaz</item>
+        <item>Djonga</item>
+        <item>Trilha Sonora do Gueto</item>
+        <item>Froid</item>
+        <item>Skank</item>
+        <item>The Weeknd</item>
+        <item>Tyler, The Creator</item>
+        <item>Alok</item>
+        <item>Thiaguinho</item>
+    </string-array>
+
+    <string-array name="nome_musicas">
+        <item>Nego Drama</item>
+        <item>Desabafo / Deixa eu Dizer</item>
+        <item>Mun Rá</item>
+        <item>Oitavo Anjo</item>
+        <item>Ponta de Lança (Verso Livre)</item>
+        <item>Vai Baby</item>
+        <item>Oooh! (I Like It)!</item>
+        <item>LEAL</item>
+        <item>Favela Sinistra</item>
+        <item>Pseudosocial</item>
+        <item>Ainda Gosto Dela</item>
+        <item>Blinding Lights</item>
+        <item>EARFQUAKE</item>
+        <item>Fuego</item>
+        <item>Buquê De Flores - Ao Vivo</item>
+    </string-array>
+
+</resources>
