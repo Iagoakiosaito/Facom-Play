@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 //        NavController navController = Navigation.findNavController(this, R.id.bottom_navigation);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setElevation(0);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.main_container, new HomeFragment()).commit();
 

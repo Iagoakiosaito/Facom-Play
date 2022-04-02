@@ -1,5 +1,6 @@
 package com.example.facomplay.fragments.Home.adapter;
 
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,11 @@ import java.util.ArrayList;
 public class MusicaRecyclerAdapter extends RecyclerView.Adapter<MusicaRecyclerAdapter.MyViewHolder> {
 
     private ArrayList<Musica> musicaArrayList;
+    private ItemClickListener mItemListener;
 
-    public MusicaRecyclerAdapter(ArrayList<Musica> musicaArrayList){
+    public MusicaRecyclerAdapter(ArrayList<Musica> musicaArrayList, ItemClickListener itemClickListener){
         this.musicaArrayList = musicaArrayList;
+        this.mItemListener = itemClickListener;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -48,14 +51,23 @@ public class MusicaRecyclerAdapter extends RecyclerView.Adapter<MusicaRecyclerAd
         String nomeMusica = musicaArrayList.get(position).getNomeMusica();
         String nomeCantor = musicaArrayList.get(position).getNomeCantor();
 
+        holder.itemView.setOnClickListener(view ->{
+            mItemListener.onItemClick(musicaArrayList.get(position));
+
+        });
 
         holder.nomeMusicaText.setText(nomeMusica);
         holder.nomeCantorText.setText(nomeCantor);
-//        holder.fotoMusica.setImageResource(musicaArrayList.get(position).getFotoMusica());
+        holder.fotoMusica.setImageResource(musicaArrayList.get(position).getFotoMusica());
     }
 
     @Override
     public int getItemCount() {
         return musicaArrayList.size();
     }
+
+    public interface ItemClickListener{
+        void onItemClick(Musica musicas);
+    }
+
 }
