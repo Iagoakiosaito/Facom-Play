@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.facomplay.MusicListPopulator;
+import com.example.facomplay.MyApplication;
 import com.example.facomplay.R;
 import com.example.facomplay.fragments.Home.adapter.MusicaRecyclerAdapter;
 
@@ -19,7 +20,6 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     View v;
-    private boolean isPlayingMusic = false;
     private MediaPlayer mediaPlayer = null;
 
     private MusicListPopulator populator = new MusicListPopulator();
@@ -54,12 +54,15 @@ public class HomeFragment extends Fragment {
         return new MusicaRecyclerAdapter(musicasList, musica -> {
             int musicaIndex = musica.getMusicaSom();
             int[] musicas = populator.getMusicas();
-            if (isPlayingMusic) {
+            MyApplication isPlayingMusic = ((MyApplication)getActivity().getApplication());
+
+            if (isPlayingMusic.getIsPlayingMusic()) {
                 mediaPlayer.stop();
             }
-            mediaPlayer = MediaPlayer.create(requireContext(), musicas[musicaIndex]);
+            mediaPlayer = ((MyApplication)getActivity().getApplication()).getMediaPlayer().create(requireContext(), musicas[musicaIndex]);
             mediaPlayer.start();
-            isPlayingMusic = true;
+            ((MyApplication)getActivity().getApplication()).setMediaPlayer(mediaPlayer);
+            isPlayingMusic.setPlayingMusic(true);
 
         });
     }

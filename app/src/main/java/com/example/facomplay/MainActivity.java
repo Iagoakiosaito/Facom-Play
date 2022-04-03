@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.example.facomplay.fragments.ConfigFragment;
 import com.example.facomplay.fragments.Home.HomeFragment;
-import com.example.facomplay.fragments.ProfileFragment;
+import com.example.facomplay.fragments.Profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
