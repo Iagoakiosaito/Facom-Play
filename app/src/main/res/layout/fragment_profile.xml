@@ -37,7 +37,8 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:scaleType="centerCrop"
-                    tools:src="@tools:sample/avatars" />
+                    tools:src="@tools:sample/avatars"
+                    android:contentDescription="@string/foto_de_perfil" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 
@@ -46,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="TextView"
+            android:text="@string/textview"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +58,7 @@
             android:id="@+id/tipoUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/textview"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +74,8 @@
         android:orientation="horizontal"
         android:weightSum="2"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:layout_editor_absoluteX="16dp">
+        tools:layout_editor_absoluteX="16dp"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="4"
+                android:text="@string/_4"
                 android:textStyle="bold" />
 
             <TextView
@@ -94,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="SEGUIDORES" />
+                android:text="@string/seguidores" />
 
         </LinearLayout>
 
@@ -109,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="4"
+                android:text="@string/_4"
                 android:textStyle="bold" />
 
             <TextView
@@ -117,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="SEGUINDO" />
+                android:text="@string/seguindo" />
 
         </LinearLayout>
 
@@ -129,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="7dp"
-        android:text="Músicas favoritas"
+        android:text="@string/musicas_favoritas"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,8 +153,8 @@
             android:id="@+id/list_fav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:layout_marginBottom="-15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

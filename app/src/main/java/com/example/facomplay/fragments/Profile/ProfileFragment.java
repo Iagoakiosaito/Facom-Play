@@ -69,7 +69,7 @@ public class ProfileFragment extends Fragment {
         nome_usuario.setText("PatuRoco");
 
         tipo_usuario = v.findViewById(R.id.tipoUsuario);
-        tipo_usuario.setText("Usuário comum");
+        tipo_usuario.setText(R.string.usuario_comum);
 
         num_seguidores = v.findViewById(R.id.num_seguidores);
         num_seguidores.setText(seguidores.toString());
@@ -88,13 +88,13 @@ public class ProfileFragment extends Fragment {
             int musicaIndex = musica.getMusicaSom();
             int[] musicas = populator.getMusicas();
             MyApplication isPlayingMusic = ((MyApplication)getActivity().getApplication());
-            mediaPlayerProfile = ((MyApplication)getActivity().getApplication()).getMediaPlayer();
+
+            MyApplication mediaPlayer = ((MyApplication)getActivity().getApplication());
+
             if (isPlayingMusic.getIsPlayingMusic()) {
-                mediaPlayerProfile.stop();
+                mediaPlayer.pararMusica();
             }
-            mediaPlayerProfile.create(requireContext(), musicas[musicaIndex]);
-            mediaPlayerProfile.start();
-            ((MyApplication)getActivity().getApplication()).setMediaPlayer(mediaPlayerProfile);
+            mediaPlayer.tocarMusica(requireContext(), musicas, musicaIndex);
             isPlayingMusic.setPlayingMusic(true);
 
         });

@@ -1,6 +1,5 @@
 package com.example.facomplay.fragments.Home;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +14,14 @@ import com.example.facomplay.MyApplication;
 import com.example.facomplay.R;
 import com.example.facomplay.fragments.Home.adapter.MusicaRecyclerAdapter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
     View v;
-    private MediaPlayer mediaPlayer = null;
+//    private MediaPlayer mediaPlayer = null;
 
-    private MusicListPopulator populator = new MusicListPopulator();
+    private final MusicListPopulator populator = new MusicListPopulator();
 
     private ArrayList<Musica> musicasList;
 
@@ -54,14 +53,14 @@ public class HomeFragment extends Fragment {
         return new MusicaRecyclerAdapter(musicasList, musica -> {
             int musicaIndex = musica.getMusicaSom();
             int[] musicas = populator.getMusicas();
-            MyApplication isPlayingMusic = ((MyApplication)getActivity().getApplication());
+            MyApplication isPlayingMusic = ((MyApplication) Objects.requireNonNull(getActivity()).getApplication());
+
+            MyApplication mediaPlayer = ((MyApplication)getActivity().getApplication());
 
             if (isPlayingMusic.getIsPlayingMusic()) {
-                mediaPlayer.stop();
+                mediaPlayer.pararMusica();
             }
-            mediaPlayer = ((MyApplication)getActivity().getApplication()).getMediaPlayer().create(requireContext(), musicas[musicaIndex]);
-            mediaPlayer.start();
-            ((MyApplication)getActivity().getApplication()).setMediaPlayer(mediaPlayer);
+            mediaPlayer.tocarMusica(requireContext(), musicas, musicaIndex);
             isPlayingMusic.setPlayingMusic(true);
 
         });

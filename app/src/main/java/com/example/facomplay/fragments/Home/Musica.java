@@ -1,7 +1,5 @@
 package com.example.facomplay.fragments.Home;
 
-import android.media.Image;
-
 public class Musica {
     private String nomeMusica;
     private String nomeCantor;

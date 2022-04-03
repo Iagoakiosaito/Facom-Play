@@ -14,7 +14,7 @@ public class MusicListPopulator {
             R.raw.oooh, R.raw.leal, R.raw.favela_sinistra, R.raw.pseudosocial, R.raw.ainda_gosto_dela, R.raw.blinding_lights,
             R.raw.earfquake, R.raw.fuego, R.raw.buque_de_flores};
 
-    private ArrayList<Musica> musicasList = new ArrayList<>();
+    private final ArrayList<Musica> musicasList = new ArrayList<>();
 
     private String[] nomesCantores;
     private String[] nomesMusicas;

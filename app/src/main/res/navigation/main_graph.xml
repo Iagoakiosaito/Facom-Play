@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/configFragment2"
-        android:name="com.example.facomplay.fragments.ConfigFragment"
+        android:name="com.example.facomplay.fragments.Config.ConfigFragment"
         android:label="fragment_config"
         tools:layout="@layout/fragment_config" >
         <action

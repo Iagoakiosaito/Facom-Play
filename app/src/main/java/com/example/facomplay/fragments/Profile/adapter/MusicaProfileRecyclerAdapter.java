@@ -16,18 +16,18 @@ import java.util.ArrayList;
 
 public class MusicaProfileRecyclerAdapter extends RecyclerView.Adapter<MusicaProfileRecyclerAdapter.MyViewHolder> {
 
-    private ArrayList<Musica> musicaArrayList;
-    private ItemClickListener mItemListener;
+    private final ArrayList<Musica> musicaArrayList;
+    private final ItemClickListener mItemListener;
 
     public MusicaProfileRecyclerAdapter(ArrayList<Musica> musicaArrayList, ItemClickListener itemClickListener){
         this.musicaArrayList = musicaArrayList;
         this.mItemListener = itemClickListener;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView nomeMusicaText;
-        private TextView nomeCantorText;
-        private ImageView fotoMusica;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        private final TextView nomeMusicaText;
+        private final TextView nomeCantorText;
+        private final ImageView fotoMusica;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

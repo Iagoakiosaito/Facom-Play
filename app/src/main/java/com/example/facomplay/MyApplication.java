@@ -1,6 +1,7 @@
 package com.example.facomplay;
 
 import android.app.Application;
+import android.content.Context;
 import android.media.MediaPlayer;
 
 public class MyApplication extends Application {
@@ -22,6 +23,15 @@ public class MyApplication extends Application {
 
     public void setPlayingMusic(boolean playingMusic) {
         this.isPlayingMusic = playingMusic;
+    }
+
+    public void tocarMusica(Context context, int[] musicas, int indexMusica){
+        mediaPlayer = MediaPlayer.create(context, musicas[indexMusica]);
+        mediaPlayer.start();
+    }
+
+    public void pararMusica(){
+        mediaPlayer.stop();
     }
 
 }

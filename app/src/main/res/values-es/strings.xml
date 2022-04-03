@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Facom Play</string>
     <string name="home">Home</string>
     <string name="perfil">Perfil</string>
-    <string name="configuraces">Configurações</string>
-    <string name="musicas_favoritas">Músicas favoritas</string>
+    <string name="configuraces">Ajustes</string>
+    <string name="musicas_favoritas">"Canciones favoritas "</string>
     <string name="textview">TextView</string>
     <string name="_4">4</string>
     <string name="seguidores">SEGUIDORES</string>
-    <string name="seguindo">SEGUINDO</string>
+    <string name="seguindo">SIGUIENTE</string>
     <string name="facom_play">Facom Play</string>
     <string name="facom_logo">Facom logo</string>
     <string name="nego_drama">Nego Drama</string>
     <string name="racionais_mcs">Racionais MCs</string>
     <string name="foto_de_perfil">foto de perfil</string>
-    <string name="usuario_comum">Usuário comum</string>
+    <string name="usuario_comum">Usuario común</string>
 
 
     <string-array name="nome_cantores">
@@ -52,19 +53,18 @@
         <item>Fuego</item>
         <item>Buquê De Flores - Ao Vivo</item>
     </string-array>
-    
+
     <string-array name="temas">
-        <item>Padrão</item>
+        <item>Estándar</item>
         <item>Modo Claro</item>
-        <item>Modo Escuro</item>
+        <item>Modo Oscuro</item>
     </string-array>
 
     <string-array name="idiomas">
-        <item>Padrão</item>
+        <item>Estándar</item>
         <item>Português - Br</item>
         <item>English - US</item>
-        <item>Español - Es-</item>
+        <item>Español</item>
     </string-array>
-
 
 </resources>
