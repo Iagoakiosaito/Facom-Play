@@ -11,15 +11,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Spinner
-        android:id="@+id/spinnerModo"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:fontFamily="@font/raleway_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -42,8 +34,28 @@
         android:layout_height="wrap_content"
         android:text="@string/facom_play"
         android:textStyle="bold"
+        android:fontFamily="@font/raleway_semibold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/switch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/raleway_semibold"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:text="Enable Dark Mode"
+        android:textAllCaps="false"
+        android:textColor="@color/mainBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerIdioma" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

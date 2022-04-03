@@ -5,13 +5,16 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_baseline_home_24"
+        android:fontFamily="@font/raleway_semibold"
         android:title="@string/home" />
     <item
         android:id="@+id/nav_music"
         android:icon="@drawable/ic_baseline_person_24"
+        android:fontFamily="@font/raleway_semibold"
         android:title="@string/perfil" />
     <item
         android:id="@+id/nav_config"
         android:icon="@drawable/ic_baseline_settings_24"
+        android:fontFamily="@font/raleway_semibold"
         android:title="@string/configuraces" />
 </menu>

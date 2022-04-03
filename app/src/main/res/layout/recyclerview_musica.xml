@@ -34,7 +34,8 @@
             android:paddingTop="28dp"
             android:text="@string/nego_drama"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/raleway_semibold" />
 
         <TextView
             android:id="@+id/nomeCantor"
@@ -42,7 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/racionais_mcs"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:fontFamily="@font/raleway_semibold" />
 
     </LinearLayout>
 

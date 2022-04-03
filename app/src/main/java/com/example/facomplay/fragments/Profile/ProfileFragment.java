@@ -67,6 +67,7 @@ public class ProfileFragment extends Fragment {
 
         nome_usuario = v.findViewById(R.id.nomeUsuario);
         nome_usuario.setText("PatuRoco");
+        nome_usuario =
 
         tipo_usuario = v.findViewById(R.id.tipoUsuario);
         tipo_usuario.setText(R.string.usuario_comum);

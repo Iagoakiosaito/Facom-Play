@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
@@ -23,6 +25,7 @@ public class ConfigFragment extends Fragment{
 
     private View v;
     private Spinner spinnerModo, spinnerIdioma;
+    private Button btnMode;
 
 
 
@@ -52,6 +55,8 @@ public class ConfigFragment extends Fragment{
         spinnerIdioma = v.findViewById(R.id.spinnerIdioma);
         ArrayAdapter<CharSequence> adapterIdioma = ArrayAdapter.createFromResource(requireContext(), R.array.idiomas, android.R.layout.simple_spinner_item);
         adapterIdioma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
         spinnerIdioma.setAdapter(adapterIdioma);
         spinnerIdioma.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -84,38 +89,36 @@ public class ConfigFragment extends Fragment{
         });
 
         SharedPreferences appSettingPrefs = getActivity().getSharedPreferences("App", 0);
+        SharedPreferences.Editor sharedPrefsEdit = appSettingPrefs.edit();
         Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
-
         if(isNightModeOn){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
-        spinnerModo = v.findViewById(R.id.spinnerModo);
-        ArrayAdapter<CharSequence> adapterModo = ArrayAdapter.createFromResource(requireContext(), R.array.temas, android.R.layout.simple_spinner_item);
-        adapterModo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerModo.setAdapter(adapterModo);
-        spinnerModo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        btnMode = v.findViewById(R.id.switch_btn);
+
+        btnMode.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                switch (position){
-//                    case 1:
-//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                        break;
-//                    case 2:
-//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                        break;
-//                }
+            public void onClick(View v) {
+                if (isNightModeOn) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    sharedPrefsEdit.putBoolean("NightMode", false);
+                    sharedPrefsEdit.apply();
 
-            }
+                    btnMode.setText("Enable Dark Mode");
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    sharedPrefsEdit.putBoolean("NightMode", true);
+                    sharedPrefsEdit.apply();
 
+                    btnMode.setText("Disable Dark Mode");
+                }
             }
         });
+
 
     }
 
