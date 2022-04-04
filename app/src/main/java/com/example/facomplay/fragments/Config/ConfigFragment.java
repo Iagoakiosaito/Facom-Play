@@ -1,16 +1,23 @@
 package com.example.facomplay.fragments.Config;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,6 +33,7 @@ public class ConfigFragment extends Fragment{
     private View v;
     private Spinner spinnerModo, spinnerIdioma;
     private Button btnMode;
+    private ImageView btn_facom;
 
 
 
@@ -55,6 +63,7 @@ public class ConfigFragment extends Fragment{
         spinnerIdioma = v.findViewById(R.id.spinnerIdioma);
         ArrayAdapter<CharSequence> adapterIdioma = ArrayAdapter.createFromResource(requireContext(), R.array.idiomas, android.R.layout.simple_spinner_item);
         adapterIdioma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
 
         spinnerIdioma.setAdapter(adapterIdioma);
@@ -119,6 +128,15 @@ public class ConfigFragment extends Fragment{
             }
         });
 
+        btn_facom = v.findViewById(R.id.imageView);
+        btn_facom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(requireContext(), "Alunos: Iago Akio saito e Lucas Guimarães Volpe", Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 

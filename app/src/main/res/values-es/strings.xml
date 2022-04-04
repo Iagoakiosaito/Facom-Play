@@ -54,17 +54,13 @@
         <item>Buquê De Flores - Ao Vivo</item>
     </string-array>
 
-    <string-array name="temas">
-        <item>Estándar</item>
-        <item>Modo Claro</item>
-        <item>Modo Oscuro</item>
-    </string-array>
 
     <string-array name="idiomas">
-        <item>Estándar</item>
+        <item>Elige Lengua</item>
         <item>Português - Br</item>
         <item>English - US</item>
         <item>Español - Es</item>
     </string-array>
+    <string name="clique_me">Haz click en mi</string>
 
 </resources>

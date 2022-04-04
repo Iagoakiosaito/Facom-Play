@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_config:
                     fragment = new ConfigFragment();
                     break;
-                case R.id.nav_music:
+                case R.id.nav_profile:
                     fragment = new ProfileFragment();
                     break;
             }
