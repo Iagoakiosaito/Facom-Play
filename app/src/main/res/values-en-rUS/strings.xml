@@ -62,5 +62,7 @@
         <item>Español - Es</item>
     </string-array>
     <string name="clique_me">Click me!</string>
+    <string name="ativar_modo_escuro">ACTIVATE DARK MODE</string>
+    <string name="ativar_modo_claro">ACTIVATE LIGHT MODE</string>
 
 </resources>

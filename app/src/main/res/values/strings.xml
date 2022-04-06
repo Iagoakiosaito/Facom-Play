@@ -16,6 +16,8 @@
     <string name="foto_de_perfil">foto de perfil</string>
     <string name="usuario_comum">Usuário comum</string>
     <string name="clique_me">Clique-me!</string>
+    <string name="ativar_modo_escuro">ATIVAR MODO ESCURO</string>
+    <string name="ativar_modo_claro">ATIVAR MODO CLARO</string>
 
 
     <string-array name="nome_cantores">

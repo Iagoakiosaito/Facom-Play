@@ -1,23 +1,16 @@
 package com.example.facomplay.fragments.Config;
 
-import static android.content.Context.LAYOUT_INFLATER_SERVICE;
-
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -27,14 +20,12 @@ import androidx.fragment.app.Fragment;
 import com.example.facomplay.R;
 
 import java.util.Locale;
+import java.util.Objects;
 
 public class ConfigFragment extends Fragment{
 
-    private View v;
-    private Spinner spinnerModo, spinnerIdioma;
+    private Spinner spinnerModo;
     private Button btnMode;
-    private ImageView btn_facom;
-
 
 
     public ConfigFragment() {
@@ -51,7 +42,7 @@ public class ConfigFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        v = inflater.inflate(R.layout.fragment_config, container, false);
+        View v = inflater.inflate(R.layout.fragment_config, container, false);
 
         definirElementos(v);
 
@@ -60,7 +51,7 @@ public class ConfigFragment extends Fragment{
 
     private void definirElementos(View v) {
 
-        spinnerIdioma = v.findViewById(R.id.spinnerIdioma);
+        Spinner spinnerIdioma = v.findViewById(R.id.spinnerIdioma);
         ArrayAdapter<CharSequence> adapterIdioma = ArrayAdapter.createFromResource(requireContext(), R.array.idiomas, android.R.layout.simple_spinner_item);
         adapterIdioma.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -97,7 +88,7 @@ public class ConfigFragment extends Fragment{
             }
         });
 
-        SharedPreferences appSettingPrefs = getActivity().getSharedPreferences("App", 0);
+        SharedPreferences appSettingPrefs = Objects.requireNonNull(getActivity()).getSharedPreferences("App", 0);
         SharedPreferences.Editor sharedPrefsEdit = appSettingPrefs.edit();
         Boolean isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
         if(isNightModeOn){
@@ -108,27 +99,24 @@ public class ConfigFragment extends Fragment{
 
         btnMode = v.findViewById(R.id.switch_btn);
 
-        btnMode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isNightModeOn) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    sharedPrefsEdit.putBoolean("NightMode", false);
-                    sharedPrefsEdit.apply();
+        btnMode.setOnClickListener(v1 -> {
+            if (isNightModeOn) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                sharedPrefsEdit.putBoolean("NightMode", false);
+                sharedPrefsEdit.apply();
 
-                    btnMode.setText("Enable Dark Mode");
+                btnMode.setText(R.string.ativar_modo_claro);
 
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    sharedPrefsEdit.putBoolean("NightMode", true);
-                    sharedPrefsEdit.apply();
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                sharedPrefsEdit.putBoolean("NightMode", true);
+                sharedPrefsEdit.apply();
 
-                    btnMode.setText("Disable Dark Mode");
-                }
+                btnMode.setText(R.string.ativar_modo_escuro);
             }
         });
 
-        btn_facom = v.findViewById(R.id.imageView);
+        ImageView btn_facom = v.findViewById(R.id.imageView);
         btn_facom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
